@@ -1,0 +1,13 @@
+name: Permissions experiment
+on:
+    workflow_dispatch:
+
+jobs:
+  permissions_experiment:
+    runs-on: Linux
+    permissions: write-all
+    env:
+        GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - run: |
+            curl -H "Authorization: token $GITHUB_TOKEN" $GITHUB_API_URL/repos/rthrippleton/actions-test/branches/main/protection
