@@ -4,7 +4,7 @@ on:
 
 jobs:
   permissions_experiment:
-    runs-on: Linux
+    runs-on: ubuntu-latest
     permissions: write-all
     env:
         GITHUB_TOKEN: ${{ github.token }}
